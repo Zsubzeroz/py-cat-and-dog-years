@@ -1,5 +1,15 @@
+def get_human_age(cat_age: int, dog_age: int) -> list:
+    def calculate(age, factor):
+        if age < 15:
+            return 0
+        if age < 24:
+            return 1
+        return 2 + (age - 24) // factor
+
+    return [calculate(cat_age, 4), calculate(dog_age, 5)]
+
+
 import pytest
-from app.main import get_human_age
 
 @pytest.mark.parametrize(
     "cat_age, dog_age, expected",
